@@ -1,25 +1,23 @@
 package com.example.onito.project.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import jakarta.persistence.*;
 
 @Entity(name = "ratings")
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 public class Rating {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @Column(nullable = false)
+    @Column(name = "tconst",nullable = false)
     private String tConst;
+    @Column(name = "averageRating")
     private double averageRating;
+    @Column(name = "numVotes")
     private int numVotes;
 }

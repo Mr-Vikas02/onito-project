@@ -1,28 +1,24 @@
 package com.example.onito.project.entity;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 
 @Entity(name = "movies")
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 public class Movie {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @Column(nullable = false)
+    @Column(name = "tconst",nullable = false)
     private String tConst;
+    @Column(name = "titleType")
     private String titleType;
+    @Column(name = "primaryTitle")
     private String primaryTitle;
+    @Column(name = "runtime_minutes")
     private int runTimeMinutes;
+
     private String genres;
 }
-
